@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ClientController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,14 +12,25 @@ use App\Http\Controllers\ClientController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/test', function(){
-     return view('test');
-}
-);
 
-Route::get('/delete-client/{id}',[ClientController::class,'delete_client']);
-Route::get('/update-client/{id}',[ClientController::class,'update_client']);
-Route::get('/update/traitement',[ClientController::class,'update_client_traitement']);
-Route::get('/Liste',[ClientController::class,'Liste_client']);
-Route::get('/ajouter',[ClientController::class,'ajouter_client']);
-Route::get('/ajouter/traitement',[ClientController::class,'ajouter_client_traitement']);
+
+Route::get('/admin', function () {
+    return view('LayoutAdmin/admin');
+});
+
+Route::get('/tables', function () {
+    return view('LayoutAdmin/tables');
+});
+
+Route::get('/login', function () {
+    return view('LayoutAdmin/login');
+});
+
+Route::get('/register', function () {
+    return view('LayoutAdmin/register');
+});
+
+Route::get('/cards', function () {
+    return view('LayoutAdmin/cards');
+});
+
